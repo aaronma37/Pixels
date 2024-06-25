@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://tqfkdikvru7i"]
+
+[ext_resource type="Texture2D" uid="uid://dgl6b8adpky7c" path="res://assets/e_l_hand_basic_glove.png" id="1_io3gk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kwbf"]
+atlas = ExtResource("1_io3gk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7et0g"]
+atlas = ExtResource("1_io3gk")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34knf"]
+atlas = ExtResource("1_io3gk")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uopie"]
+atlas = ExtResource("1_io3gk")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fvvp"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kwbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7et0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34knf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uopie")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="e_l_hands_basic_gloves" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8fvvp")
+animation = &"walk"

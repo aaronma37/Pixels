@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxe6lqw882444"]
+
+[ext_resource type="Texture2D" uid="uid://b6dhh1xqn42fp" path="res://assets/body.png" id="1_q7jk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxcxj"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgaeo"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bawfd"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wnud"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tgds"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpnmn"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvqb0"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfqae"]
+atlas = ExtResource("1_q7jk2")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxytu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxcxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgaeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bawfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wnud")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tgds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpnmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvqb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfqae")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="body" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dxytu")
+animation = &"walk"

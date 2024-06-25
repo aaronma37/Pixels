@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxguk7nij23f8"]
+
+[ext_resource type="Texture2D" uid="uid://qk8fr4brjj7k" path="res://assets/e_upper_body_basic_robes.png" id="1_7uj30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0v3n"]
+atlas = ExtResource("1_7uj30")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxsr4"]
+atlas = ExtResource("1_7uj30")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxpgi"]
+atlas = ExtResource("1_7uj30")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb036"]
+atlas = ExtResource("1_7uj30")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8ynk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7uj30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0v3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxsr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxpgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb036")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="e_upper_body_basic_robes" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j8ynk")
+animation = &"walk"

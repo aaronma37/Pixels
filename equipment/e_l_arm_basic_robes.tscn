@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://djxq04l0pa0d2"]
+
+[ext_resource type="Texture2D" uid="uid://duictnhq2al2o" path="res://assets/e_l_arm_basic_robes.png" id="1_o3syd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uam6a"]
+atlas = ExtResource("1_o3syd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hirxs"]
+atlas = ExtResource("1_o3syd")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv1sa"]
+atlas = ExtResource("1_o3syd")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shldr"]
+atlas = ExtResource("1_o3syd")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aksm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o3syd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uam6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hirxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv1sa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shldr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="e_l_arm_basic_robes" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aksm5")
+animation = &"walk"

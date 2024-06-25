@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca4bc0et2v8am"]
+
+[ext_resource type="Texture2D" uid="uid://pqvqvwfn2w7s" path="res://assets/lleg.png" id="1_7vmvb"]
+[ext_resource type="Texture2D" uid="uid://dvprtodf03s1k" path="res://assets/lleg_walk.png" id="2_tukpt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0656"]
+atlas = ExtResource("2_tukpt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usoag"]
+atlas = ExtResource("2_tukpt")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgivk"]
+atlas = ExtResource("2_tukpt")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nt43"]
+atlas = ExtResource("2_tukpt")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpsf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7vmvb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0656")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usoag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgivk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nt43")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="l_leg" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fpsf2")
+animation = &"walk"
+frame = 1
+frame_progress = 0.210715

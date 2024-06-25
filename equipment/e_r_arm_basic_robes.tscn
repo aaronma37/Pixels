@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b40m53sepwj4t"]
+
+[ext_resource type="Texture2D" uid="uid://cq2inxic7p0c7" path="res://assets/basic_r_arm_robes.png" id="1_tss5l"]
+[ext_resource type="Texture2D" uid="uid://da8wof2vbma7k" path="res://assets/e_r_arm_basic_robes.png" id="2_f30qn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3kac"]
+atlas = ExtResource("2_f30qn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnfbb"]
+atlas = ExtResource("2_f30qn")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cage3"]
+atlas = ExtResource("2_f30qn")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51w1l"]
+atlas = ExtResource("2_f30qn")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v2bk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tss5l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3kac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnfbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cage3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51w1l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="e_r_arm_basic_robes" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6v2bk")
+animation = &"walk"

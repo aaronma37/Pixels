@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddi5vl4giukri"]
+
+[ext_resource type="Texture2D" uid="uid://s60mvhioujig" path="res://assets/basic_shoulders.png" id="1_u7a1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmkug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u7a1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shoulder_basic" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hmkug")
