@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://y55iapm8tvla"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5jgfs"]
+[ext_resource type="Script" path="res://PanelContainer.gd" id="18_ibfhb"]
+[ext_resource type="PackedScene" uid="uid://ci4f5basarspx" path="res://Icon/icon.tscn" id="19_eki8m"]
+[ext_resource type="PackedScene" uid="uid://2x6ewnkn7v0e" path="res://UI/character_equipment.tscn" id="20_5xuyi"]
+[ext_resource type="PackedScene" uid="uid://dry5bqtc1mxy8" path="res://UI/inventory.tscn" id="21_ksc6h"]
+[ext_resource type="PackedScene" uid="uid://0rele0slpyfn" path="res://UI/splash_ui.tscn" id="23_utumx"]
+[ext_resource type="PackedScene" uid="uid://ci2jnucicxm2l" path="res://UI/tavern_ui.tscn" id="23_v0byu"]
+[ext_resource type="PackedScene" uid="uid://bdq3m84vhc58f" path="res://UI/battle_ui.tscn" id="24_ikwkq"]
+[ext_resource type="Script" path="res://CharacterLayer.gd" id="28_2bjov"]
+[ext_resource type="PackedScene" uid="uid://dpd3yaj6kxcy1" path="res://BackgroundLayer/tavern_background_layer.tscn" id="33_o4oq8"]
+[ext_resource type="PackedScene" uid="uid://bg4sth2sybh0l" path="res://BackgroundLayer/splash_background_layer.tscn" id="34_7iirw"]
+[ext_resource type="PackedScene" uid="uid://cyg5plv2t2jgf" path="res://BackgroundLayer/battle_background_layer.tscn" id="35_88w7y"]
+[ext_resource type="PackedScene" uid="uid://dv50ekol0or6o" path="res://CharacterLayer/TavernCharacterLayer.tscn" id="37_nsgll"]
+[ext_resource type="PackedScene" uid="uid://dpi0nv75hi3v8" path="res://CharacterLayer/SplashCharacterLayer.tscn" id="38_ko6cb"]
+[ext_resource type="PackedScene" uid="uid://dsg3q2kiusi44" path="res://CharacterLayer/BattleCharacterLayer.tscn" id="39_s8qnj"]
+
+[node name="Main" type="Node2D"]
+visible = false
+script = ExtResource("1_5jgfs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(580, 324)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(900, 250)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+script = ExtResource("18_ibfhb")
+
+[node name="Button" type="Button" parent="UILayer/PanelContainer"]
+layout_mode = 2
+text = "sdafasdfsadfsdafasdfasdfsa"
+
+[node name="icon" parent="UILayer" instance=ExtResource("19_eki8m")]
+visible = false
+
+[node name="icon2" parent="UILayer" instance=ExtResource("19_eki8m")]
+visible = false
+offset_left = 100.0
+offset_right = 130.0
+offset_bottom = 50.0
+
+[node name="Control" parent="UILayer" instance=ExtResource("20_5xuyi")]
+visible = false
+offset_left = 764.0
+offset_top = -3.0
+offset_right = 764.0
+offset_bottom = -196.0
+
+[node name="Control2" parent="UILayer" instance=ExtResource("21_ksc6h")]
+visible = false
+offset_left = 127.0
+offset_top = 424.0
+offset_right = 127.0
+offset_bottom = 424.0
+
+[node name="Control3" parent="UILayer" instance=ExtResource("20_5xuyi")]
+visible = false
+offset_left = 3.0
+offset_top = -4.0
+offset_right = -745.0
+offset_bottom = -197.0
+
+[node name="Control4" parent="UILayer" instance=ExtResource("20_5xuyi")]
+visible = false
+offset_left = 381.0
+offset_top = -4.0
+offset_right = -367.0
+offset_bottom = -197.0
+
+[node name="Tavern" parent="UILayer" instance=ExtResource("23_v0byu")]
+visible = false
+
+[node name="Splash" parent="UILayer" instance=ExtResource("23_utumx")]
+visible = false
+
+[node name="Battle" parent="UILayer" instance=ExtResource("24_ikwkq")]
+visible = false
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+
+[node name="Tavern" parent="BackgroundLayer" instance=ExtResource("33_o4oq8")]
+visible = false
+
+[node name="Splash" parent="BackgroundLayer" instance=ExtResource("34_7iirw")]
+visible = false
+
+[node name="Battle" parent="BackgroundLayer" instance=ExtResource("35_88w7y")]
+visible = false
+
+[node name="CharacterLayer" type="CanvasLayer" parent="."]
+layer = 10
+follow_viewport_enabled = true
+script = ExtResource("28_2bjov")
+
+[node name="Tavern" parent="CharacterLayer" instance=ExtResource("37_nsgll")]
+visible = false
+
+[node name="Splash" parent="CharacterLayer" instance=ExtResource("38_ko6cb")]
+visible = false
+
+[node name="Battle" parent="CharacterLayer" instance=ExtResource("39_s8qnj")]
+visible = false
+
+[node name="ForegroundLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="SpellsAndFXLayer" type="CanvasLayer" parent="."]
+layer = 15

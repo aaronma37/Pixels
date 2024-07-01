@@ -1,17 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://osdxs1toyk1x"]
-
-[ext_resource type="Texture2D" uid="uid://cyn88b4g4onrp" path="res://assets/basic_robes.png" id="1_cx3tf"]
+[gd_scene load_steps=2 format=3 uid="uid://osdxs1toyk1x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j8ynk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_cx3tf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="e_upper_body_basic_robes" type="Node2D"]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://buudawjr4ak0t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fy7f"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Label" type="Label"]
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fy7f")
+text = "A label"

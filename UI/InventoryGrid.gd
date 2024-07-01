@@ -1,9 +1,12 @@
-extends AnimatedSprite2D
+extends GridContainer
 
+var num_slots = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	play("default")
+	for i in num_slots:
+		var slot = load("res://UI/ItemSlot.tscn").instantiate()
+		add_child(slot)
 	pass # Replace with function body.
 
 

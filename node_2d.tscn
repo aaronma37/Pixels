@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://d2e410pc7a8dr"]
+[gd_scene load_steps=65 format=3 uid="uid://d2e410pc7a8dr"]
 
 [ext_resource type="Texture2D" uid="uid://batn0qc3k870v" path="res://harken_hero.png" id="1_0clfa"]
 [ext_resource type="Texture2D" uid="uid://vux7xu7sl6o6" path="res://maria-0.png" id="1_uw86v"]
@@ -17,8 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bmo4cjvufn3su" path="res://right_shoulders.png" id="13_vrrd1"]
 [ext_resource type="Texture2D" uid="uid://ct4q4xu2hivt7" path="res://spear.png" id="14_uw6hb"]
 [ext_resource type="Script" path="res://AnimatedSprite2D13.gd" id="15_pokn3"]
+[ext_resource type="PackedScene" uid="uid://ci4f5basarspx" path="res://Icon/icon.tscn" id="18_52y0t"]
+[ext_resource type="Script" path="res://PanelContainer.gd" id="18_nxf4c"]
 [ext_resource type="Texture2D" uid="uid://b4tut0n3u08ay" path="res://lennethh.png" id="18_vetvo"]
 [ext_resource type="Script" path="res://AnimatedSprite2D14.gd" id="19_moua2"]
+[ext_resource type="PackedScene" uid="uid://2x6ewnkn7v0e" path="res://UI/character_equipment.tscn" id="20_40bng"]
 [ext_resource type="Texture2D" uid="uid://wokm7ic8nncd" path="res://top.png" id="20_w57bx"]
 [ext_resource type="Script" path="res://AnimatedSprite2D15.gd" id="21_hydi2"]
 [ext_resource type="Texture2D" uid="uid://cgurb41ue76wg" path="res://wowsprites.jpg" id="22_27d4v"]
@@ -328,9 +331,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(580, 324)
 
 [node name="Maria-0" type="Sprite2D" parent="."]
@@ -433,10 +437,22 @@ offset_right = 450.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
+script = ExtResource("18_nxf4c")
 
 [node name="Button" type="Button" parent="UILayer/PanelContainer"]
 layout_mode = 2
 text = "sdafasdfsadfsdafasdfasdfsa"
+
+[node name="icon" parent="UILayer" instance=ExtResource("18_52y0t")]
+
+[node name="icon2" parent="UILayer" instance=ExtResource("18_52y0t")]
+offset_left = 100.0
+offset_right = 130.0
+offset_bottom = 50.0
+
+[node name="Control" parent="UILayer" instance=ExtResource("20_40bng")]
+offset_left = 679.0
+offset_right = 679.0
 
 [node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="."]
 visible = false

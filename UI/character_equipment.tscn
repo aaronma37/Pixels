@@ -1,0 +1,162 @@
+[gd_scene load_steps=8 format=3 uid="uid://2x6ewnkn7v0e"]
+
+[ext_resource type="PackedScene" uid="uid://dnwlp085blam0" path="res://UI/ItemSlot.tscn" id="1_ondwm"]
+[ext_resource type="PackedScene" uid="uid://b35i38dl31vd1" path="res://character/character_root.tscn" id="2_rjvhg"]
+[ext_resource type="Script" path="res://UI/StatsText.gd" id="3_n2oos"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tomx"]
+bg_color = Color(0.0156863, 0, 0, 0.870588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3bb3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_epfk5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqgg3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.176471)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -748.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 0
+offset_right = 372.0
+offset_bottom = 424.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1tomx")
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 1
+offset_right = 372.0
+offset_bottom = 423.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/FlowContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Panel/FlowContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 15
+
+[node name="HeadSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="ShoulderSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="BodySlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="HandSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="MainHandSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="OffHandSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="FeetSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="TrinketSlot" parent="Panel/FlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_ondwm")]
+layout_mode = 2
+
+[node name="HFlowContainer" type="VFlowContainer" parent="Panel/FlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/FlowContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Panel/FlowContainer/HFlowContainer/MarginContainer"]
+custom_minimum_size = Vector2(280, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3bb3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/FlowContainer/HFlowContainer/MarginContainer/Panel"]
+custom_minimum_size = Vector2(10, 30)
+layout_mode = 1
+offset_right = 280.0
+offset_bottom = 30.0
+bbcode_enabled = true
+text = "[center]Name[/center]
+"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/FlowContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Panel/FlowContainer/HFlowContainer/MarginContainer3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_epfk5")
+
+[node name="Control" type="Control" parent="Panel/FlowContainer/HFlowContainer/MarginContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CharacterRoot" parent="Panel/FlowContainer/HFlowContainer/MarginContainer3/Panel/Control" instance=ExtResource("2_rjvhg")]
+scale = Vector2(2, 2)
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/FlowContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Panel/FlowContainer/HFlowContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqgg3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/FlowContainer/HFlowContainer/MarginContainer2/Panel"]
+layout_direction = 2
+layout_mode = 1
+offset_right = 300.0
+offset_bottom = 200.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "Max HP:"
+fit_content = true
+script = ExtResource("3_n2oos")

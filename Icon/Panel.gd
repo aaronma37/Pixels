@@ -1,9 +1,10 @@
-extends AnimatedSprite2D
+extends Panel
 
+func _get_drag_data(_pos):
+	print("CC")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	play("default")
 	pass # Replace with function body.
 
 

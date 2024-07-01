@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnwlp085blam0"]
+
+[ext_resource type="Script" path="res://icon.gd" id="1_5lkih"]
+[ext_resource type="Script" path="res://Icon/TextureButton.gd" id="2_esa6k"]
+[ext_resource type="Script" path="res://Icon/Panel.gd" id="4_0y1td"]
+[ext_resource type="PackedScene" uid="uid://cxguk7nij23f8" path="res://equipment/e_upper_body_basic_robes.tscn" id="5_djbkt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8c6n"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvpnn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="ItemSlot" type="TextureRect"]
+custom_minimum_size = Vector2(30, 30)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+script = ExtResource("1_5lkih")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("2_esa6k")
+
+[node name="Panel" type="Panel" parent="TextureButton"]
+clip_children = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8c6n")
+
+[node name="Panel" type="Panel" parent="TextureButton/Panel"]
+show_behind_parent = true
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tvpnn")
+script = ExtResource("4_0y1td")
+
+[node name="e_upper_body_basic_robes" parent="TextureButton/Panel" instance=ExtResource("5_djbkt")]
+position = Vector2(11, 25)
+scale = Vector2(2, 2)
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 39.0
+offset_right = 293.0
+offset_bottom = 243.0
+mouse_filter = 2
+script = ExtResource("4_0y1td")
+
+[node name="EquipmentTitle" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 0
+offset_left = 5.0
+offset_right = 2005.0
+offset_bottom = 400.0
+bbcode_enabled = true
+text = "EquipmentName"
+
+[node name="Slot" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 20.0
+offset_right = 2005.0
+offset_bottom = 420.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/default_color = Color(0.478431, 0.478431, 0.478431, 1)
+bbcode_enabled = true
+text = "EquipmentSlot"
+
+[node name="StatsLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 35.0
+offset_right = 405.0
+offset_bottom = 75.0
+scale = Vector2(0.5, 0.5)
+text = "Stats"
+
+[node name="Rank" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "Rank"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0

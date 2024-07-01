@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck37xr52h2dvr"]
+
+[ext_resource type="Script" path="res://UI/all_inventory.gd" id="1_hbhl6"]
+[ext_resource type="PackedScene" uid="uid://2x6ewnkn7v0e" path="res://UI/character_equipment.tscn" id="1_pohdt"]
+[ext_resource type="PackedScene" uid="uid://dry5bqtc1mxy8" path="res://UI/inventory.tscn" id="2_d4bok"]
+
+[node name="AllInventory2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hbhl6")
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VFlowContainer"]
+custom_minimum_size = Vector2(0, 525)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="VFlowContainer/MarginContainer"]
+custom_minimum_size = Vector2(1130, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 380
+columns = 3
+
+[node name="Control" parent="VFlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_pohdt")]
+layout_mode = 2
+
+[node name="Control2" parent="VFlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_pohdt")]
+layout_mode = 2
+
+[node name="Control3" parent="VFlowContainer/MarginContainer/GridContainer" instance=ExtResource("1_pohdt")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VFlowContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VFlowContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Inventory" parent="VFlowContainer/CenterContainer/MarginContainer2" instance=ExtResource("2_d4bok")]
+layout_mode = 2
